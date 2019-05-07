@@ -67,7 +67,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if("${CMAKE_CXX_COMPILER_ID}" MATCHES Clang
     OR "${CMAKE_CXX_COMPILER_ID}" MATCHES GNU)
 #  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=${CXX_STD}")
-message("Using CFLAGS!! ${CMAKE_CXX_FLAGS}. Compiler ID: ${CMAKE_CXX_COMPILER_ID})
+    message("Using CFLAGS!! ${CMAKE_CXX_FLAGS}. Compiler ID: ${CMAKE_CXX_COMPILER_ID})
 endif()
 
 # Enable modular builds
