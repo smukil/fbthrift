@@ -55,14 +55,19 @@ include_directories(${Boost_INCLUDE_DIRS})
 # Provide an option to control the -std argument for the C++ compiler.
 # We don't use CMAKE_CXX_STANDARD since it requires at least CMake 3.8
 # to support C++17.
-set(CXX_STD "gnu++1z"
-  CACHE STRING
-  "The C++ standard argument to pass to the compiler. Defaults to gnu++1z."
-)
-mark_as_advanced(CXX_STD)
+#set(CXX_STD "gnu++1z"
+#  CACHE STRING
+#  "The C++ standard argument to pass to the compiler. Defaults to gnu++1z."
+#)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+#mark_as_advanced(CXX_STD)
 if("${CMAKE_CXX_COMPILER_ID}" MATCHES Clang
     OR "${CMAKE_CXX_COMPILER_ID}" MATCHES GNU)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=${CXX_STD}")
+#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=${CXX_STD}")
+message("Using CFLAGS!! ${CMAKE_CXX_FLAGS}. Compiler ID: ${CMAKE_CXX_COMPILER_ID})
 endif()
 
 # Enable modular builds
